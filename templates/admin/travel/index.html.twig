@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="row">
+
+ <div class="col">
+
+ <h1>Administrartion Des VOYAGES VOYAGES</h1>
+
+{% for item in app.flashes('notice') %}
+<p class="alert alert-success"> {{ item }}</p>
+   
+{% endfor %}
+
+ <p>
+ <a href="{{url('admin.travel.form.add')}}" class="btn btn-primary"> Ajouter</a>
+ </p>
+
+ <table class="table table-striped">
+    <tr>
+    <th>Affiche</th>
+    <th>nom</th>
+    <th>prix</th>
+    <th>Jours</th>
+    <th>Description</th>
+    <th>themes</th>
+       <th>Villes</th>
+    </tr>
+
+    {% for travel in travels  %}
+<td class="w-25">
+       <tr>
+   
+    <th> <img src="{{ asset('img/' ~ travel.poster ) }}" alt="ACME logo" style="width:150px;" > </th>
+    <th>{{travel.name}}</th>
+    <th>{{travel.price}}€</th>
+    <th>{{travel.days}} jours</th>
+    <th>{{travel.description}}  </th>
+    
+<td>{{ travel.theme.name }}</td>
+<td>{{ travel.city.name }}</td>
+  
+    </tr>
+        
+    {% endfor %}
+ 
+ </table>
+</div>
+</div>
+
+ {% endblock %} 

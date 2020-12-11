@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="row">
+ <div class="col">
+ 
+ <h2> 
+
+ {% for country in countrys %}
+<p>
+<a href="{{url('country.index', {slug:country.slug } )}}">{{ country.name }} </a>
+
+</p>
+{% endfor %}
+
+</div>
+
+ {% endblock %} 

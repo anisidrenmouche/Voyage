@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="row">
+
+ <div class="col">
+
+<h1 style="text-align: center;">Formulaires Des VOYAGES VOYAGES</h1>
+{{form_start(form, {attr: {novalidate: '' } })}}
+
+<p>
+{{form_label(form.name, 'Nom:') }}
+{{form_widget(form.name, {attr: { placeholder:'votre nom du voyage' }}) }}
+</p>
+
+
+<p>
+{{form_label(form.description, 'Description:') }}
+{{form_widget(form.description, {attr: {placeholder:'votre description'}}) }}
+</p>
+
+
+<p>
+{{form_label(form.price, 'prix:') }}
+{{form_widget(form.price, {attr: {placeholder:'votre prix'}}) }}
+</p>
+
+
+<p>
+{{form_label(form.days, 'jours:') }}
+{{form_widget(form.days, {attr: {placeholder:'vos jours'}}) }}
+</p>
+
+
+<p>
+{{form_label(form.poster, 'images:') }}
+{{form_widget(form.poster, {attr: {placeholder:'votre image'}}) }}
+</p>
+
+<p>
+{{form_label(form.country, 'Pays:') }}
+{{form_widget(form.country, {attr:{placeholder:'votre pays'}}) }}
+</p>
+
+<p>
+{{form_label(form.theme, 'themes:') }}
+{{form_widget(form.theme, {attr:{placeholder:'votre pays'}}) }}
+</p>
+
+<p>
+{{form_label(form.city, 'villes:') }}
+{{form_widget(form.city, {attr:{placeholder:'votre pays'}}) }}
+</p>
+
+<br>
+<p>
+<input type="submit" value="Valider" class="btn btn-info">
+</p>
+
+
+
+
+{{form_end(form)}}
+
+{% endblock %} 
+ 

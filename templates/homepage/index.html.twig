@@ -1,0 +1,171 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+{#<h1> Salut {{nom | upper}} </h1>
+<ul>
+
+
+{% for student in list %}
+<li> {{ student }} </li>
+{% endfor %}
+
+</u>#}
+
+{% for region in regions %}
+<p>
+<a href="{{url('region.index', {slug: region.slug } )}}">{{ region.name }} </a>
+</p>
+
+<ul>
+
+
+{% for country in region.countries %}
+<li>
+<a href="{{url('country.index', {slug: country.slug })}}">
+{{ country.name }}
+
+{{country.description}}
+
+</li>
+
+
+<div class="container">
+    <h3 class="h3">{{ country.name }}</h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="{{ country.name }}" src="https://www.touteleurope.eu/fileadmin/user_upload/France.png">
+                        <img class="pic-2" src="https://www.touteleurope.eu/fileadmin/user_upload/France.png">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">20%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">FRANCE</a></h3>
+                    <div class="price">$14446.00
+                        <span>$24430.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="https://upload.wikimedia.org/wikipedia/commons/0/01/France_d%C3%A9partementale.svg">
+                        <img class="pic-2" src="https://upload.wikimedia.org/wikipedia/commons/0/01/France_d%C3%A9partementale.svg">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">50%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">FRANCE 2</a></h3>
+                    <div class="price">$4445.00
+                        <span>$1230.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="https://www.debout-la-france.fr/sites/default/files/tribune/f_1920_map_departement_names_ys.jpg">
+                        <img class="pic-2" src="https://www.debout-la-france.fr/sites/default/files/tribune/f_1920_map_departement_names_ys.jpg">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">50%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">france 3</a></h3>
+                    <div class="price">$445.00
+                        <span>$210.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="https://www.fondationhopitaux.fr/wp-content/uploads/2020/11/covid-19-cartedefrance-800x600.png">
+                        <img class="pic-2" src="https://www.fondationhopitaux.fr/wp-content/uploads/2020/11/covid-19-cartedefrance-800x600.png">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">50%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">FRANCE 4</a></h3>
+                    <div class="price">$55.00
+                        <span>$100.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+
+
+    
+{% endfor %}
+
+</ul>
+{% endfor %}
+
+ {% endblock %} 
